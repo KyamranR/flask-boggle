@@ -8,7 +8,10 @@ app.config['SECRET_KEY'] = 'porsche911'
 
 boggle_game = Boggle()
 
-
+@app.route('/')
+def homepage():
+    """Home Page"""
+    return render_template('index.html')
 
 
 
