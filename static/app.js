@@ -8,7 +8,7 @@ class BoggleGame {
 
     this.showTimer();
     this.timer = setInterval(this.watch.bind(this), 1000);
-    $(".add-word", this.board).on("submit", this.handleSubmit.bin(this));
+    $(".add-word", this.board).on("submit", this.handleSubmit.bind(this));
   }
 
   showWord(word) {
@@ -28,9 +28,9 @@ class BoggleGame {
 
   async handleSubmit(event) {
     event.preventDefault();
-
-    const $word = $("word", this.board);
-
+    console.log(event);
+    const $word = $(".word", this.board);
+    console.log($word);
     let word = $word.val();
 
     if (!word) return;
