@@ -11,6 +11,7 @@ boggle_game = Boggle()
 @app.route('/')
 def homepage():
     """Home Page"""
-    
-    return render_template('index.html')
+    board = boggle_game.make_board()
+
+    return render_template('index.html', board=board)
     
